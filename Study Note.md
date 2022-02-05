@@ -1,8 +1,22 @@
-
 ## W1P1: Intro and Framework
 GOAL: 
 - define casual effects and "the effect of a cause" vs "the cause of an effect", potential outcomes, assignment mechanism
 - define estimands, including average treatment effects and average treatment effects for the treated.
+What do we mean by a causal effect:
+- what is the effect of some treatment T on an outcome Y
+  - effect of a cause rather than cause of an effect
+Framework:
+- Rubin Causl model:
+  - help us be clear abotu the effects we are estimating
+  - treatments (intervention and control)
+  - units (the entities at a particular point in time)
+  - potential outcomes
+    - potential outcome under treatment <img src="https://render.githubusercontent.com/render/math?math=Y(T=1) = Y(1)">
+    - potential outcome under control <img src="https://render.githubusercontent.com/render/math?math=Y(T=0) = Y(0)">
+  - causal effects are comparisons of these potential outcomes among the same!! group of people
+    - causal effect for unit/individual i: <img src="https://render.githubusercontent.com/render/math?math=Y_i(1) - Y_i(0)">
+    - average causal effect: average of <img src="https://render.githubusercontent.com/render/math?math=Y_i(1) - Y_i(0)"> across individual
+ - fundamental problem of causal
 
 ## W1P2: Discussion of "The C word", and Randomized Experiments
 GOAL:
