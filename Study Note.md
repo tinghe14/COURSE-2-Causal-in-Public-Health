@@ -6,7 +6,7 @@ GOAL:
 
 ## W1P2: Discussion of "The C word", and Randomized Experiments
 GOAL:
-- basics of randomized exepriments: unconfounded assignment mechanisms, efficacy and effectiveness trials, cluster-based designs, increases in power when pretest mearsure of outcome aailable (for use to calculate gain scores)
+- basics of randomized exepriments: unconfounded assignment mechanisms, efficacy and effectiveness trials, cluster-based designs, increases in power when pretest measure of outcome available (eg: for use to calculate gain scores)
 - concepts of internal, external, and target validity
 
 ## W2P1: Observational Studies and the Importance of Design
