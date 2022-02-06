@@ -23,8 +23,9 @@ Framework:
 - 2 types of causal effects
   - can't estimate individual-level causal effects (we can estimate the close as we can but never estimate the individual level)
   - average treatment effect
-    - <img src="https://render.githubusercontent.com/render/math?math=ATE = \frac{1}{N} \sum_{i=1}^{N} Y_i(1) - Y_i(0)">
+    - <img src="https://render.githubusercontent.com/render/math?math=ATE = \frac{1}{N} \sum_{i=1}^{N} (Y_i(1) - Y_i(0))">
   - average treatment effect on the treated
+    - <img src="https://render.githubusercontent.com/render/math?math=ATT = \frac{1}{N_t} \sum_{i=1}^{N_t} (Y_i(1) - Y_i(0) | T_i = 1)">
 ## W1P2: Discussion of "The C word", and Randomized Experiments
 GOAL:
 - basics of randomized exepriments: unconfounded assignment mechanisms, efficacy and effectiveness trials, cluster-based designs, increases in power when pretest measure of outcome available (eg: for use to calculate gain scores)
