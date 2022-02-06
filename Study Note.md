@@ -17,7 +17,14 @@ Framework:
     - causal effect for unit/individual i: <img src="https://render.githubusercontent.com/render/math?math=Y_i(1) - Y_i(0)">
     - average causal effect: average of <img src="https://render.githubusercontent.com/render/math?math=Y_i(1) - Y_i(0)"> across individual
  - fundamental problem of causal
-
+  - only observe <img src="https://render.githubusercontent.com/render/math?math=Y_i(1)"> or <img src="https://render.githubusercontent.com/render/math?math=Y_i(0)"> for each i
+  - mathematical representation: <img src="https://render.githubusercontent.com/render/math?math=Y_i = T_iY_i(1) + (1-T_i)Y_i(0)">
+  - casual inference as missing data problem
+- 2 types of causal effects
+  - can't estimate individual-level causal effects (we can estimate the close as we can but never estimate the individual level)
+  - average treatment effect
+    - <img src="https://render.githubusercontent.com/render/math?math=ATE = \frac{1}{N} \sum_{i=1}^{N} Y_i(1) - Y_i(0)">
+  - average treatment effect on the treated
 ## W1P2: Discussion of "The C word", and Randomized Experiments
 GOAL:
 - basics of randomized exepriments: unconfounded assignment mechanisms, efficacy and effectiveness trials, cluster-based designs, increases in power when pretest measure of outcome available (eg: for use to calculate gain scores)
