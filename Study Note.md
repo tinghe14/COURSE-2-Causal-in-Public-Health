@@ -26,6 +26,16 @@ Framework:
     - <img src="https://render.githubusercontent.com/render/math?math=ATE = \frac{1}{N} \sum_{i=1}^{N} (Y_i(1) - Y_i(0))">
   - average treatment effect on the treated
     - <img src="https://render.githubusercontent.com/render/math?math=ATT = \frac{1}{N_t} \sum_{i=1}^{N_t} (Y_i(1) - Y_i(0) | T_i = 1)">
+- important concepts for learning about causal effects
+  - replication
+    - need to have multi units
+  - SUTBA: stable unit treatment value assumption
+    - no interference干涉 between units: treatment assignment of one unit does not affect potential outcomes of another unit
+    - only one version of each treatment 
+  - assignment mechanism
+    - process that determines which treatment each unit receives
+    - randomized exeriments: known assignment mechanism
+    - observational studies: have to posit an assignment mechianse
 ## W1P2: Discussion of "The C word", and Randomized Experiments
 GOAL:
 - basics of randomized exepriments: unconfounded assignment mechanisms, efficacy and effectiveness trials, cluster-based designs, increases in power when pretest measure of outcome available (eg: for use to calculate gain scores)
