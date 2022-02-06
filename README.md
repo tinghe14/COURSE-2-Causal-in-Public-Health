@@ -7,7 +7,7 @@ This course foucus on:
   - matching method, propensity score, regression discontinuity and instrumental variables
 - discuss complications encountered in causal studies, including missing data, noncompliance, and hidden bias
 
-Here is the [study note]() for this course.
+Here is the [study note](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Study%20Note.md) for this course.
 
 ## Proposal
 My final proposal for this course
