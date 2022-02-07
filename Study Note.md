@@ -121,7 +121,7 @@ non-experimental studies
         - and in fact, matching meethods (like propensity score) work best in conjuction with regression
           - we should use propensity score methods to ensure comparing similar individuals
   - graphical form
-    - [plot1](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/plot%201.png)
+    - ![plot1](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/plot%201.png)
 propensity score method
 - attempt to replicate two features of randomized experiments
   - create groups that look only randomly different from one another at least on observed variables
@@ -139,10 +139,31 @@ propensity score method
           - no unobserved confounders, no hidden bias. ignorable
             - can help make unconfoundedness assumption more realistic if think about it during data collection
             - can also do sensitivity analyses to assess how sensitive results are to violation of this assumption
-            - math: [plot 2](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/plot%202.png)
+            - math: ![plot 2](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/plot%202.png)
       - however, the theory does depend on knowing the true propensity score and of the covaraies having particular distributions
         - in practice, need to check that balancing property holds
         - central goal is to get balance
+        - addtional requirement for causal inference:
+          - common support
+            - if someone has 0 probability of receiving one of the treatments, we have no way of learning what their outcomes would be under treatment, so can't learn about hteir causal effects
+              - in practice, this examined by looking at common suppor/overlap of the propensity score distrbution
+                - ![plot 3](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/plot%203.png)
+           - different types of propensity scores of 'matching'
+             - k to 1 nearest neigbhor matching
+               - for each treated unit, select k controls with closest propensity scores
+             - subclassification/ stratification
+               - group individuals into groups with similar propensity score values
+             - weighting adjustments
+                - IPTW: inverse probability of exposure weights 
+                  - weighting by the odds
+           - what about just including the propensity score in the outcome model
+             - common way but not good strategy
+               - commonly used as predictor in regression using full sample
+                 - if sample unbalanced on covariates, will be unbalanced on propensity score
+             - best approach is to combine a propensity score approach with regression adjustment
+               - use covariate twice 
+                 - once in propensity score model and once in outcome model
+                   - not double dipping since they are modeling different associations (with treatment vs with outcome)
 ## W2P2: Introduction to Propensity Scores
 GOAL:
 - The theory underlying propensity scores
