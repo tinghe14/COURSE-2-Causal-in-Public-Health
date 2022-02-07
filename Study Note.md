@@ -112,8 +112,37 @@ non-experimental studies
       - cons:
         - lots of variables to stratify on, limited sample size
   - regression analysis
+    - dangers of regression adjustment on full samples
+      - see the answer each time a model is run
+      - when the treated and control groups have very different distributions of the confounders, can lead to bias if model misspecificied
+      - regression is only 'trustworthy' if the treatment and comparison groups look similar on covariates
+      - when is regression adjustment trustworthy?
+        - if difference between groups not lagre(eg, <.1 or <0.2 standard deviations) regression work fine
+        - and in fact, matching meethods (like propensity score) work best in conjuction with regression
+          - we should use propensity score methods to ensure comparing similar individuals
   - graphical form
-    - [plot]()
+    - [plot1](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/plot%201.png)
+propensity score method
+- attempt to replicate two features of randomized experiments
+  - create groups that look only randomly different from one another at least on observed variables
+  - don't use outcome when setting up the design
+ - idea is to find treated and control indiviudals with similar covariate
+  - increase balance
+- propensity scores
+  - def: probablity of receiving the treatment (T) given the covariates (x)
+    - math:  <img src="https://render.githubusercontent.com/render/math?math=e_i = P(T_i =1 | x_i)">
+    - two key features
+      - balancing score: at each value of the propensity score, the distribution of observed covariates the same in the treated and control groups
+        - difference in outcomes within groups with same/similar propebnsity scores gives unbiased estimate of treatment effect
+      - non unmeasured confounders
+        - if treatment assignment independent of potential outcomes given covariates, then also independent of potential outcomes given the propensity score
+          - no unobserved confounders, no hidden bias. ignorable
+            - can help make unconfoundedness assumption more realistic if think about it during data collection
+            - can also do sensitivity analyses to assess how sensitive results are to violation of this assumption
+            - math: [plot 2](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/plot%202.png)
+      - however, the theory does depend on knowing the true propensity score and of the covaraies having particular distributions
+        - in practice, need to check that balancing property holds
+        - central goal is to get balance
 ## W2P2: Introduction to Propensity Scores
 GOAL:
 - The theory underlying propensity scores
