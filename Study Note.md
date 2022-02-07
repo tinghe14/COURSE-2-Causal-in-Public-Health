@@ -170,6 +170,26 @@ GOAL:
 - basic steps in a propensity score analysis
 - basic of propensity score matching, weighting, and subclassification
 
+example 1
+- two-pronged strategy:
+  - propensity score methods to deal as well as possible with observed characteristics
+  - sensitivity analysis to consider how an unobserved confounder may change study conclusions
+- variable selections: 
+  - best: lay out a conceptual model describing the factors that likely influence treatment selection and outcomes, and have deep understanding of treatment selection process
+    - including more: unconfoundness more likeling
+    - but including too many can lead to higher variance and worse balance on truly important variables
+  - instructor ideas:
+    - in large samples, be generous in what you include
+    - in small samples (~100), concentrate on variables beleived to be strongly related to the outcomes
+    - most important to include: 
+      - pre-treatment measures of the outcome
+    - prioritize variables in categories
+      - thoese you think are the strongest confounders
+      - those that you aren't sure or think are moderate confounders
+      - those that you think may be condounders but would be weak
+    - don't include variables that may have been affected by treatment
+      - also can't include variables perfectly predictive of treatment assignment
+    - high-dimensional setting (interesting for my final project proposal)
 ## W3P1: Implementation of matching and related methods
 
 ## W3P2: Assessing sensitivity to an unobserved confounder
