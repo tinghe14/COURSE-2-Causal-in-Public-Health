@@ -88,12 +88,32 @@ Different trials of design
 - practical (pragmatic) clinical trials
   - very large-scale trials
   - if shows positive results, the intervention show a sign of 'really' works in usual practice
+ 
 ## W2P1: Observational Studies and the Importance of Design
 GOAL:
 - careful selection of comparison units and data
 - dangers of regression on unmatched samples and assumptions underlying regression adjustment in non experimental studies
 - definition and intuition behind propensity scores
 
+non-experimental studies
+- main problem:
+  - people in treatment and control groups likely systematically different in both observed and unobserved ways
+    - treated and control individuals very different on lots of things (confounding)
+      - overt/observed bias
+      - hidden/unoberserved bias
+        - main idea of propensity score and related methods: deal as well as possible with overt bias, then worry hidden bias
+- difference
+  - in an RCT we don't have to worry about bias, and so can be concerned with variance
+    - similarly, we have internal validity and so might then also care about external validity
+  - in a non-experimental study, internal validity bias likely the first order concern
+- traditional non-experimental design options
+  - stratification
+    - put people into groups with same values of covariates
+      - cons:
+        - lots of variables to stratify on, limited sample size
+  - regression analysis
+  - graphical form
+    - [plot]()
 ## W2P2: Introduction to Propensity Scores
 GOAL:
 - The theory underlying propensity scores
