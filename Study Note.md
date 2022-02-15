@@ -7,7 +7,7 @@ What do we mean by a causal effect:
   - effect of a cause rather than cause of an effect
 Framework:
 - Rubin Causl model:
-  - help us be clear abotu the effects we are estimating
+  - help us be clear about the effects we are estimating
   - treatments (intervention and control)
   - units (the entities at a particular point in time)
   - potential outcomes
@@ -29,7 +29,7 @@ Framework:
 - important concepts for learning about causal effects
   - replication
     - need to have multi units
-  - SUTBA: stable unit treatment value assumption
+  - SUTVA: stable unit treatment value assumption
     - no interference干涉 between units: treatment assignment of one unit does not affect potential outcomes of another unit
     - only one version of each treatment 
   - assignment mechanism
@@ -191,5 +191,26 @@ example 1
       - also can't include variables perfectly predictive of treatment assignment
     - high-dimensional setting (interesting for my final project proposal)
 ## W3P1: Implementation of matching and related methods
+Goal:
+- more details on propensity score and related methods
+- diagnostics for comparison group designs
+- recent advances in propensity score and related methods
+
+Context:
+- non-experimental setting: can't randomize
+  - treatment groups differ on pre-treatment characteristics that affect the outcome: confounding
+  - assuming strong ignorablity: no unmeasured confounding, all units are eligible for both treatment levels
+- need to adjust for measured confounders
+  - ? don't want to use regression - extrapolaiton, reliance on correct model specification, limited number of covariates in model
+- instead using "design-based" methods: propensity scores
+  - goal: mimic randomized experiment by attaining covariate balance
+- two common estimands:
+  - average treatment effect (ATE): difference in outcomes if the full sample got the treatment vs comparison condition
+  - ATT: difference in outcomes if treated group got the treatment vs comparsion condition
 
 ## W3P2: Assessing sensitivity to an unobserved confounder
+Goal:
+- introduction to analyses of sensitvity to the assumption of ignorable treatment assignment (tests for hidden bias)
+- the e-value, and related methods
+
+## W4P1: Encouragement designs and instrumental variables in randomized experiments
