@@ -184,6 +184,10 @@ propensity score method
                - use covariate twice 
                  - once in propensity score model and once in outcome model
                    - not double dipping since they are modeling different associations (with treatment vs with outcome)
+  - propensity score(con't)
+    - don't care much about predictive ability of model (eg, c-statistics)
+    - don't care about collinearity of covariates of coefficients themselves: only need predicted probabilities
+    - just care about whether it results in balanced matched samples
 ## C4-W2P2: Introduction to Propensity Scores
 GOAL:
 - The theory underlying propensity scores
@@ -216,6 +220,8 @@ Goal:
 - diagnostics for comparison group designs
 - recent advances in propensity score and related methods
 
+section: the bastics of matching, weighting and subclassification
+
 Context:
 - non-experimental setting: can't randomize
   - treatment groups differ on pre-treatment characteristics that affect the outcome: confounding
@@ -227,6 +233,31 @@ Context:
 - two common estimands:
   - average treatment effect (ATE): difference in outcomes if the full sample got the treatment vs comparison condition
   - ATT: difference in outcomes if treated group got the treatment vs comparsion condition
+propensity score:
+- it is a balanceing score
+- conditional on PS, treatment is independent of covariates
+- it can be used for weighting, subclassifcation, matching or regression adjustment
+  - weighting:
+    - basic idea: compute the weights from PS ->  weights balance covariates -> estimate treatment effect using weighted regression
+    - formula for weights depends on estimand:
+      - ![pic](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/weight%20ATE%2C%20ATT.png)
+        - alternative methods:
+          - generalized boosted modeling propensity score (GBM), covariate balancing propensity score (CBPS), entropy balancing
+    - comments:
+      - pros: 
+        - easy to use, tends to work well, well understood, many modern advances
+        - easy to combine with other data structures and complications (such as complex survey data)
+      - cons:
+        - model dependent
+        - extreme weights yield imprecision and bias
+   - subclassification:
+     - basic idea: create subclassess on PS -> balance within subclasses -> estimate effects within subclasses
+     - comments:
+       - pros: easy to use and explain, robust to PS model specification
+       - cons: may be worse at removing bias, subclassess may not be balanced and may be small
+   - matching:
+     - basic idea: find subset of units similar on propensity score, drop the rest -> groups are balanced -> estimate effect in matched sample
+       - matching yields matching weights - typically 1 for retained and 0 for discarded
 
 ## C6-W3P2: Assessing sensitivity to an unobserved confounder
 Goal:
