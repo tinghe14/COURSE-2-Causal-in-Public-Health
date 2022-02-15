@@ -2,6 +2,7 @@
 GOAL: 
 - define casual effects and "the effect of a cause" vs "the cause of an effect", potential outcomes, assignment mechanism
 - define estimands, including average treatment effects and average treatment effects for the treated.
+
 What do we mean by a causal effect:
 - what is the effect of some treatment T on an outcome Y
   - effect of a cause rather than cause of an effect
