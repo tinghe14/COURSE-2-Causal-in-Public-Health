@@ -3,8 +3,7 @@
 2. understandthe spectrum of designs for both randomized and non-randomized studies
 3. identify the suitations for which non-randomized designs are most appropriate
 4. understand and be able to apply methods for estimating causal effects, including propensity score techniques, instrucmental variables ("encouragement designs "), and regression discontinuity
-5. focus will be on learning how to critically review 
-
+5. focus will be on learning how to critically review research that claims to estimate causal effects with non-experimental data. students will also understand complications encountered in causal studies, including missing data, noncompliance, and hidden bias.
 
 ## W1P1: Intro and Framework
 GOAL: 
@@ -57,7 +56,8 @@ Causal framework
 - potential outcomes
 - treatment
 - control
-- key: causal effects are not a comparison of outcomes for different groups. It is a comparision of potential outcoems under two conditions for the SAME group
+- key: causal effects are not a comparison of outcomes for different groups. It is a comparision of potential outcomes under two conditions for the SAME group
+
 Randomized experiments
 - 3 key properties
   - treatment assignment is 'unconfounded'
@@ -104,7 +104,12 @@ GOAL:
 - dangers of regression on unmatched samples and assumptions underlying regression adjustment in non experimental studies
 - definition and intuition behind propensity scores
 
+benefit of randomized experiments:
+- yield treated and control groups that are balanced: have similar covariate distributions
+- technically, the treatment assignment is unconfounded (depends only on observed covariates, not unobserved variables). in other words, there are no unmeasured confounders
+
 non-experimental studies
+- just obserbed waht "treatment" people do or don't get+
 - main problem:
   - people in treatment and control groups likely systematically different in both observed and unobserved ways
     - treated and control individuals very different on lots of things (confounding)
@@ -157,6 +162,12 @@ propensity score method
             - if someone has 0 probability of receiving one of the treatments, we have no way of learning what their outcomes would be under treatment, so can't learn about hteir causal effects
               - in practice, this examined by looking at common suppor/overlap of the propensity score distrbution
                 - ![plot 3](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/plot%203.png)
+           - ideal: exact matches on all covariates
+             - for each treated individual, would like a control with exactly the same values of all covariates
+             - this might be fairly easy with 1 covariate, but what if we have lots of covariates
+             - instead, use propensity scores as summary of all the covariates
+               - estimated propensity score with a large set of covariates
+               - improved covariate balance after matching 
            - different types of propensity scores of 'matching'
              - k to 1 nearest neigbhor matching
                - for each treated unit, select k controls with closest propensity scores
