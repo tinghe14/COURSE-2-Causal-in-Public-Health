@@ -5,7 +5,7 @@
 4. understand and be able to apply methods for estimating causal effects, including propensity score techniques, instrucmental variables ("encouragement designs "), and regression discontinuity
 5. focus will be on learning how to critically review research that claims to estimate causal effects with non-experimental data. students will also understand complications encountered in causal studies, including missing data, noncompliance, and hidden bias.
 
-## W1P1: Intro and Framework
+## C1-W1P1: Intro and Framework
 GOAL: 
 - define casual effects and "the effect of a cause" vs "the cause of an effect", potential outcomes, assignment mechanism
 - define estimands, including average treatment effects and average treatment effects for the treated.
@@ -45,7 +45,7 @@ Framework:
     - randomized exeriments: known assignment mechanism
     - observational studies: have to posit an assignment mechianse
     
-## W1P2: Discussion of "The C word", and Randomized Experiments
+## C2-W1P2: Discussion of "The C word", and Randomized Experiments
 GOAL:
 - basics of randomized exepriments: unconfounded assignment mechanisms, efficacy and effectiveness trials, cluster-based designs, increases in power when pretest measure of outcome available (eg: for use to calculate gain scores)
 - concepts of internal, external, and target validity
@@ -98,7 +98,7 @@ Different trials of design
   - very large-scale trials
   - if shows positive results, the intervention show a sign of 'really' works in usual practice
  
-## W2P1: Observational Studies and the Importance of Design
+## C3-W2P1: Observational Studies and the Importance of Design
 GOAL:
 - careful selection of comparison units and data
 - dangers of regression on unmatched samples and assumptions underlying regression adjustment in non experimental studies
@@ -184,7 +184,7 @@ propensity score method
                - use covariate twice 
                  - once in propensity score model and once in outcome model
                    - not double dipping since they are modeling different associations (with treatment vs with outcome)
-## W2P2: Introduction to Propensity Scores
+## C4-W2P2: Introduction to Propensity Scores
 GOAL:
 - The theory underlying propensity scores
 - basic steps in a propensity score analysis
@@ -210,7 +210,7 @@ example 1
     - don't include variables that may have been affected by treatment
       - also can't include variables perfectly predictive of treatment assignment
     - high-dimensional setting (interesting for my final project proposal)
-## W3P1: Implementation of matching and related methods
+## C5-W3P1: Implementation of matching and related methods
 Goal:
 - more details on propensity score and related methods
 - diagnostics for comparison group designs
@@ -228,9 +228,9 @@ Context:
   - average treatment effect (ATE): difference in outcomes if the full sample got the treatment vs comparison condition
   - ATT: difference in outcomes if treated group got the treatment vs comparsion condition
 
-## W3P2: Assessing sensitivity to an unobserved confounder
+## C6-W3P2: Assessing sensitivity to an unobserved confounder
 Goal:
 - introduction to analyses of sensitvity to the assumption of ignorable treatment assignment (tests for hidden bias)
 - the e-value, and related methods
 
-## W4P1: Encouragement designs and instrumental variables in randomized experiments
+## C7-W4P1: Encouragement designs and instrumental variables in randomized experiments
