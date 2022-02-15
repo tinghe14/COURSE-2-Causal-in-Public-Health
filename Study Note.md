@@ -1,3 +1,11 @@
+## Course objectives
+1. understand causal problems as potential interventions, through the framework of potential outcomes and assignment mechanisms
+2. understandthe spectrum of designs for both randomized and non-randomized studies
+3. identify the suitations for which non-randomized designs are most appropriate
+4. understand and be able to apply methods for estimating causal effects, including propensity score techniques, instrucmental variables ("encouragement designs "), and regression discontinuity
+5. focus will be on learning how to critically review 
+
+
 ## W1P1: Intro and Framework
 GOAL: 
 - define casual effects and "the effect of a cause" vs "the cause of an effect", potential outcomes, assignment mechanism
