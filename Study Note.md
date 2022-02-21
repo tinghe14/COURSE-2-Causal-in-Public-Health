@@ -316,4 +316,13 @@ Goal:
 - introduction to analyses of sensitvity to the assumption of ignorable treatment assignment (tests for hidden bias)
 - the e-value, and related methods
 
+Unobserved confounders:
+- propensity score methods (as well as standard regression adjustment) rely on unconfoundness assumption
+  - no unobserved confounders
+  - no hidden bias
+- of course this often not completedly satisfied
+  - two questions
+    - how much would an unobserved confounder matter?
+    - how do we limit sensivity to an unobserved confounder?
+
 ## C7-W4P1: Encouragement designs and instrumental variables in randomized experiments
