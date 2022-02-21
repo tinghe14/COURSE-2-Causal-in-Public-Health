@@ -220,7 +220,7 @@ Goal:
 - diagnostics for comparison group designs
 - recent advances in propensity score and related methods
 
-section: the bastics of matching, weighting and subclassification
+*section: the bastics of matching, weighting and subclassification*
 
 Context:
 - non-experimental setting: can't randomize
@@ -230,15 +230,12 @@ Context:
   - ? don't want to use regression - extrapolaiton, reliance on correct model specification, limited number of covariates in model
 - instead using "design-based" methods: propensity scores
   - goal: mimic randomized experiment by attaining covariate balance
-- two common estimands:
-  - average treatment effect (ATE): difference in outcomes if the full sample got the treatment vs comparison condition
-  - ATT: difference in outcomes if treated group got the treatment vs comparsion condition
-propensity score:
-- it is a balanceing score
-- conditional on PS, treatment is independent of covariates
-- it can be used for weighting, subclassifcation, matching or regression adjustment
-  - weighting:
-    - basic idea: compute the weights from PS ->  weights balance covariates -> estimate treatment effect using weighted regression
+  - probability of treatment given covariates
+  - it is a balanceing score
+    - conditional on PS, treatment is independent of covariates
+  - it can be used for weighting, subclassifcation, matching or regression adjustment
+weighting:
+  - basic idea: compute the weights from PS ->  weights balance covariates -> estimate treatment effect using weighted regression
     - formula for weights depends on estimand:
       - ![pic](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/weight%20ATE%2C%20ATT.png)
         - alternative methods:
@@ -252,12 +249,67 @@ propensity score:
         - extreme weights yield imprecision and bias
    - subclassification:
      - basic idea: create subclassess on PS -> balance within subclasses -> estimate effects within subclasses
+     - create bins based on quantiles of PS (5 often used, but others should be tried, estimates ATT or ATE)
+     - two ways to use subclasses:
+       - estimate effect within each subclass, then combine
+       - marginal mean weighting through stratification - compute weights based on subclass membership, then treat as PS weights
      - comments:
        - pros: easy to use and explain, robust to PS model specification
        - cons: may be worse at removing bias, subclassess may not be balanced and may be small
    - matching:
      - basic idea: find subset of units similar on propensity score, drop the rest -> groups are balanced -> estimate effect in matched sample
        - matching yields matching weights - typically 1 for retained and 0 for discarded
+     - basic matching is 1:1 PS matching without replacement
+     - however, it is highly customizable
+       - with replacement
+       - k:1 matching - more than one control unit can be matched to each treated unit
+       - fixed/variable ratio matching
+       - full matching - all units included
+         - sample is divided into subclasses with 1 treated or 1 control
+       - pro: easy to explain, robust to model misspecification, customizable, data reduction
+       - con: slow with large dataset, discarding units can decrease precision
+
+*section: diagnostics for matching and related methods*
+
+assessing balance:
+- balance: degree to which covariate distributions are similar between treatment groupos
+  - ideally could do this on the full covariate distributions
+    - but this generally hard, so instead look at one- or two- dimensional summaries
+      - means of covariates, variances of covariances, means of interactions of two covariates
+      - calculate as if comparing outcomes after each approach:
+        - 1:1 matching, use matched samples
+        - subclassification, aggregate across subclasses
+        - weighting, use weights
+
+*Section: complications and conclusions*
+
+other data types:
+- multi-category treatments
+  - estimand becomes more specific
+- continuous treatments
+  - weighting method for continuous treatments based on conditional density of treatment given covariates
+- missing data, etc
+the main ideas:
+- a design approach: select treatment and comparision units to be as similar as possible on observed baseline characteristics
+- rather than simply "controlling for" covariates through regression adjustment, use weighting, matching or subclassficiation
+- many methods exist within this broad category, pick the approach that gives you the best balance in that dataset
+- propensity scores a key tool to achieve balance
+- three primary ways to use propensity scores, weighting, subclassification, matching (+ full matching)
+  - when do these methods work?
+    - when you can get goodf covariate balance on a large set of potential confounders
+      - generally don't work well if all you have are basic 
+    - what can go wrong?
+      - of course these methods can't solve everything
+      - there still can be unobserved differences between groups
+        - sensitivity analysis can be used, to assess robustness of results to an unobserved confounder
+      - you may not get good covariance balance
+        - necessary to check
+        - data could be insufficient for the question of interest
+          - there might not be enough overlap
+        - this is a limitation of the data, not the method
+benefits of using propensity score and related methods:
+- clear separation of designs and analysis
+- forces you to see the amount of overlap (balance) in the data - standard regression diagnostics won't show this
 
 ## C6-W3P2: Assessing sensitivity to an unobserved confounder
 Goal:
