@@ -318,11 +318,43 @@ Goal:
 
 Unobserved confounders:
 - propensity score methods (as well as standard regression adjustment) rely on unconfoundness assumption
-  - no unobserved confounders
-  - no hidden bias
+  - no unobserved confounders, no hidden bias
 - of course this often not completedly satisfied
   - two questions
     - how much would an unobserved confounder matter?
     - how do we limit sensivity to an unobserved confounder?
+the setting
+- unobserved U also related to T and Y and it gives us the bias here because unobserved u is here, the observed relationship between t and y is not fully accurate = the value of UT and UY relatinship to adjust the TY relationship:
+- ![U plot](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/U%20plot.png)
+types of questions sensitvity analysis asks/answers:
+- given a certain (range of)U, what is the bias of the T-Y effect?
+- given that U, what would the true T-Y effect be?
+- with what U would the T-Y effect go away? (statistically non-significant, zero point estimate)
+- could there be a U that makes the T-Y effect go away?
+  - the main idea:
+     - change vague statements about potential for unobserved confounding into quantitative ones about how large the bias would have to be to change the results
+  - main message for today:
+    - lots of options and flavors (with different settings, assumptions)
+    - depends on specific situation (data, main analysis)
+    - depends on the question
+ One classic example:
+ - smoking and lung cancer: 
+   -  Fisher had written saying he thought observed relationship between smoking and lung cancer due to some unobserved genetic factor that made people more susceptible to both 
+   -  Cornfield's analysis changed his mind: that genetic factor would have to be more strongly related to smoking and to lung cancer that anything already observed 
+      - Thus, if cigarette smokers have 9 times the risk of nonsmokers for developing lung cancer, and this is not because cigarette smoke is a causal agent, but only because cigarette smokers produce hormone X, then the proportion OF HORMONE X-producers among cigarette smokers must be at least 9 times greater than that of nonsmokers. If the relative prevalance of hormone X-producers is considerably less than ninefold, then hormone X can't account for the magnitude of the apparent effect
+   - formally statement:
+     - what if treatment assignment is not unconfounded given X, but is unconfounded given observed X and unobserved U?
+       - 2 stage process:
+         - deal as well as possible with observed X's (eg, propensity score methods)
+         - then worry about senstivity to an unobserved U, after accounting for X
 
 ## C7-W4P1: Encouragement designs and instrumental variables in randomized experiments
+Goal:
+- Identifying "natural experiments" to use instrumental variables methods in non-experimental studies
+- Assumptions underlying instrumental variables estimation
+- Examples of instruments in practice
+
+## C8-W4P2: Instrumental variables as a non-experimental study design
+Goal:
+- Introduction to concepts behind principal stratification
+- Concepts for dealing with post-treatment variables, including connection to mediation analysis and censoring by death
