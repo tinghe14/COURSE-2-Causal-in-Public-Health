@@ -1,6 +1,6 @@
 ## Course objectives
 1. understand causal problems as potential interventions, through the framework of potential outcomes and assignment mechanisms
-2. understandthe spectrum of designs for both randomized and non-randomized studies
+2. understand the spectrum of designs for both randomized and non-randomized studies
 3. identify the suitations for which non-randomized designs are most appropriate
 4. understand and be able to apply methods for estimating causal effects, including propensity score techniques, instrucmental variables ("encouragement designs "), and regression discontinuity
 5. focus will be on learning how to critically review research that claims to estimate causal effects with non-experimental data. students will also understand complications encountered in causal studies, including missing data, noncompliance, and hidden bias.
