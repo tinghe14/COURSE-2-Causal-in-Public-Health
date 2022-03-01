@@ -349,12 +349,52 @@ types of questions sensitvity analysis asks/answers:
          - then worry about senstivity to an unobserved U, after accounting for X
 
 ## C7-W4P1: Encouragement designs and instrumental variables in randomized experiments
+## C8-W4P2: Instrumental variables as a non-experimental study design
 Goal:
 - Identifying "natural experiments" to use instrumental variables methods in non-experimental studies
 - Assumptions underlying instrumental variables estimation
 - Examples of instruments in practice
-
-## C8-W4P2: Instrumental variables as a non-experimental study design
 Goal:
 - Introduction to concepts behind principal stratification
 - Concepts for dealing with post-treatment variables, including connection to mediation analysis and censoring by death
+
+Introduction to instrumental variables:
+- moving to another approach for estimating causal effects: instrumental variables
+  - natrual experiments
+  - randomized encouragement designs
+    - useful for dealing with noncompliance in randomized trials, as well as estimation of causal effects in non-experimental settings
+- noncompliance
+  - a common complication in randomized trials is that people don't always do what they're told. such as 
+    - treatment group members may not take the treatment
+      - so, what is the effect if someone actually takes it? what to do about this?
+- for now, consider only "one-sided noncompliance:" assume control group does not have access to the treatment (compliers: take the treatment if assigned to, don't take if not assigned to; non-compliers: don't take the treatment either way)
+- what is the instrument: the randomization
+  - we randomize something, but not the thing we are really interested in. we really intrested in effect of actually taking the treatment, but we couldn't randomize that. However, we can use the randomization of the 'instrument' to help us estimate the effect we really want
+  - ![example](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/Zeger.png):
+    - two potential quantities of interest: the effect of being told (randomized) to take Vitamin A; the effect of actually taking it
+      - ![intent-to-treat (ITT) effect](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/ITT.png)
+        - the standard estimate in randomized trials
+        - ignore the compliance (what treatments people actually took) and just uses the randomization  遵守
+          - compares mortality rates among all treatment group members with mortality rates among all control group members
+      - ![as-treated analysis](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/AT.png)
+        - compares the people who actually received the treatment with those who actually recived the control
+        - ignores the randomization (waht people were assigned to)
+        - not a valid eestimate of a causal effect:
+          - compares the compliers in treatment group with the non-compliers in the treatment group and full control group
+Defining and estimating the CACE
+Two-sided noncompliance
+More details on CACE estimation
+Introduction to instrumental variables in non-experimental studies
+Exmaples of instruments
+More details on estimation
+Conclusions
+
+## C9-W5P1: Introduction to Principal Stratification and Truncation due to Death
+Goal: 
+- Introduction to concpets behind principal stratification
+- Concepts for dealing with post-treatment variables, including connection mediation analysis and censoring by death
+
+## C10-W5P2: Mediation analysis
+Goal:
+- Discussion of estimands relevant for mediation analysis when interest is in determining the pathways of effects
+- will include discussion of methods for estimating mediational effects with a focus on the underlying assumptions and new ways of defining causal mediation effects
