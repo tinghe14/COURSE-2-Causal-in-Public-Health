@@ -195,7 +195,7 @@ GOAL:
 - basic of propensity score matching, weighting, and subclassification
 
 example 1
-- two-pronged strategy:
+- two-pronged strategy: 两个同时的办法
   - propensity score methods to deal as well as possible with observed characteristics
   - sensitivity analysis to consider how an unobserved confounder may change study conclusions
 - variable selections: 
