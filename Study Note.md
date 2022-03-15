@@ -378,11 +378,64 @@ Introduction to instrumental variables:
           - compares mortality rates among all treatment group members with mortality rates among all control group members
       - ![as-treated analysis](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/AT.png)
         - compares the people who actually received the treatment with those who actually recived the control
-        - ignores the randomization (waht people were assigned to)
-        - not a valid eestimate of a causal effect:
+        - ignores the randomization (wj=hat people were assigned to)
+        - not a valid estimate of a causal effect:
           - compares the compliers in treatment group with the non-compliers in the treatment group and full control group
-Defining and estimating the CACE
-Two-sided noncompliance
+      - ![per protocol analtsis](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/Per%20protocol%20analysis.png)
+        - compares the outcomes of those people who appeared to comply with their assigned treatment
+        - ignore the biology effect
+        - not a valid estimate of a causal effect
+      - summary:
+        - goal of estimating the 'biologic' effect of taking a treatment (not just of being assigned to take it)
+        - intent-to-treat estimate valid for effect of the randomization, but not for what we're interested in
+        - per-protocol, as-treated estimators not valid for anything; not valid causal comparisions
+        - then will introduce a better approach, estimating the **complier average causal effect** (CACE)
+
+Defining and estimating the CACE/IV(instrumental variable):
+- none of above provide an estimate of what we really want: the biologic effect of taking Vitamin A on mortality
+- we can use instrumental variables/complier average causal effect methods to estimate this effect
+  - we have two types of people in the populaiton (compliers and non-compliers), can express the overall effect as the average of the effects for those two groups: 
+  - <img src="https://render.githubusercontent.com/render/math?math=ACE = p_c * CACE + p_n * NACE">
+    - for compliers, the effect of being told(randomized) to take the treatment is the same as actually taking the treatment
+    - so the effect of interest if the 'complier average causal effect' (CACE)
+      - how to estimate the CACE:
+        - the ITT provides an unbiased estimate of the total effect of randomization across the population (the overall average causal effect; ACE) (an aside: think of ACE=ATE)
+        - <img src="https://render.githubusercontent.com/render/math?math=p_c"> is the proportion of treatment group memebers who took the treatment, since treatment assigned randomly, that estimates the % compliers in the population
+        - assume that being assigned to the treatment doesn't affect outcomes if it doesn't affect bahavior(NACE=0)
+        - more on the underlying assumptions later
+        
+Two-sided noncompliance:
+- if control group has access to the treatment, compliance can go both ways
+  - now think about 3 types of 'non-compliers': defiers, always-takers and never takers
+  - still interest in CACE, but more complicated to get to it
+- example:
+  - interest in estimating effect of flu shots on hospitalization among the elderly, but not ethical to randomly assign people to get flu shots or not, instead, radomly assign encouragement to get flu shots
+  - when can't actually randomize treatment of interest or can't deny the program to some individuals. randomize somehting that will affect whether people get that treatment such as encouragement to get a flu shot or more intensive invitation to participant in the program
+  - ![flu shot example](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/flu%20shot%20example.png)
+    - compliers: do as they are told
+    - defiers: do the opposite of what they are told
+    - always takers: take the treatment whether in treatment or control group
+    - never takers: don't take the treatment whether in treatment or control group
+      - they make the calculations more complicated and require more assumptions
+        - think of these as like baseline characteristics: they are instrinsic characteristics of individuals
+          - no affected by treatment assignment
+          - (as opposed to apparenet compliance behavior, which is affected by assignment)
+        - ![behavior of the four types](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/four%20types.png)
+        - however, we can't tell which one belong to which group
+        - ![reason](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/can't%20tell%20type.png)
+        - ![caculation](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/formula%20to%20calculate%20CACE.png)
+        - ![details](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/details.png)
+        - assumptions needed to estimate the CACE
+          - SUTVA
+          - encouragement increases participation for some people: there are some compliers (pc > 0)
+          - treatment assignment (encouragement) doesn't affect outcomes if it doesn't affect the treatment actually received
+            - no effects of encouragement for always-takers or never-takers (NACE=0, AACE=0)(the exclusion restrictions)
+          - encouragement (the instrument) was assigned randomly (or at least unconfounded)
+          - no defiers(monotonicity)
+            - encouragement can only increase the probability that someone gets a flu shot
+        - three conditions for an instrument:
+          - has a causal effect on the treatment of interest (there are some compliers, pc>0)
+           
 More details on CACE estimation
 Introduction to instrumental variables in non-experimental studies
 Exmaples of instruments
