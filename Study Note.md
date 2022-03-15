@@ -398,3 +398,15 @@ Goal:
 Goal:
 - Discussion of estimands relevant for mediation analysis when interest is in determining the pathways of effects
 - will include discussion of methods for estimating mediational effects with a focus on the underlying assumptions and new ways of defining causal mediation effects
+
+## C11-W6P1: Time-varying exposures and marginal structural models
+
+## C12-W6P2: Generalizability of randomized trial results to target population
+
+## C13-W7P1: Regression Discontinuity Designs
+
+## C14-W7P2: Interrupted time series methods
+
+## C15-W8P1: Wrap-up and conclusions, including any special topics of interest
+
+## C16-W8P2: Final Wrap and Conclusions
