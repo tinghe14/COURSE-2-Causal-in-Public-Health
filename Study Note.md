@@ -435,9 +435,42 @@ Two-sided noncompliance:
             - encouragement can only increase the probability that someone gets a flu shot
         - three conditions for an instrument:
           - has a causal effect on the treatment of interest (there are some compliers, pc>0)
-           
-More details on CACE estimation
-Introduction to instrumental variables in non-experimental studies
+          - affects the outcome only through the treatment received (exclusion restrictions)
+          - does not share common causes with the outcome (instrument was assigned randomly)
+        - ![estimate](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/estimate%20plot.png)
+        - ![explain](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/explain%20under%20scene.png)
+          - exclusion restrictions often the most questionable assumptions:
+            - never-taker: being encouraged to get a flu shot might prompt them to change other behaviors (eg, washing hands)
+            - always-taker: being encouraged may prompr them to also change other behaviors, or get the shot earlier
+              - can relax these assumptions through alternate model assumptions or Bayesian methods
+        - ![another way of writing the IV effect](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/another%20way%20of%20writing%20the%20IV%20effect.png)
+- interpretation of CACE: the estimate that we get is the effect of treatment for the compliers
+  - CACE sometimes called the 'local average treatment effect'
+  
+More details on CACE estimation:
+- other methods:
+  - the above method of caculate CACE is very simple but don't allow for predictors, doesn't incorporate unbcertainty in Pc
+  - two-stage least squares (TSLS) to estimate these IV/CACE effects
+    - treatment received (as a function of treatment assigned "instrument")
+    - outcome, given the treatment received
+      - allows the incorporation of predictors in both models (will increase precision)
+- Summary so far: 
+  - CACE estimation allows us to estimate the effect of actually taking some treatment
+  - relies on assumptions such as the exclusion restrictions and no defiers
+  - exclusion restrictions (no direct effects) often the most troublesome
+  - will then talk about using this framework in estimating causal effects in non-experimental studies
+  - will also discuss other complications and extensions           
+
+Introduction to instrumental variables in non-experimental studies:
+- previously talked about IV in t he context of an experiment:
+  - randomization as the instrument
+  - full participation (compliance) the treatment of real interest
+  - now convert those ideas into non-experimental studies
+    - take advantage of some randomness in nature, leverage that to estimate the effect of interest
+      - the instrument is the thing that can be though of as having being randomly assigned, and that influences receipt of the treatment of real interest, but which doen;t directly affect the outcomes
+      - the underlying assumptions are the same
+    - Rassen, 2009'IV analysis relies on finding a naturally varying phenomenon, related to treatment but not to outcome except through the effect of treatment itself, and then using this phenomenon as proxy for the confounded treatment variable'
+    - ![schematic of IV estimation](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/schematic%20of%20IV%20estimation.png)
 Exmaples of instruments
 More details on estimation
 Conclusions
