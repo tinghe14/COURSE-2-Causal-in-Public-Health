@@ -471,8 +471,27 @@ Introduction to instrumental variables in non-experimental studies:
       - the underlying assumptions are the same
     - Rassen, 2009'IV analysis relies on finding a naturally varying phenomenon, related to treatment but not to outcome except through the effect of treatment itself, and then using this phenomenon as proxy for the confounded treatment variable'
     - ![schematic of IV estimation](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/schematic%20of%20IV%20estimation.png)
-Exmaples of instruments
+      - no direct relationship between instrument and outcome
+      - the best instrument is th random and fully determines the treatment that you really care about
+      - we need to find it:
+        - what qualities do instruments need to have?
+          - related to treatment receipt (eg, affects who gets the treatment; called the 'strength' of the instrument)
+          - randomly assigned (or at least hypothetically randomly assigned)
+          - no 'direct' effects on the outcome of interest (the exclusion restriction)(no direct arrow from IV to outcome)
+            - but unfortunately properties 2 and 3 not directly testable
+            - third one is fully not testable and we need to have some scientific assumptions
+
+Exmaples of instruments:
+- ![1](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/IV%20example.png)
+- ![2](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/IV%20example%202.png)
+- ![3](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/IV%20example%203.png)
+- ![4](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/IV%20example%204.png)
+- ![5](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/IV%20example%20.png)
+  - ![IV assumption](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/IV%20variable%20assumption.png)
+  - ![IV category](https://github.com/tinghe14/COURSE-2-Causal-in-Public-Health/blob/main/Plot%20in%20Study%20Notes/IV%20broad%20category.png)
+
 More details on estimation
+
 Conclusions
 
 ## C9-W5P1: Introduction to Principal Stratification and Truncation due to Death
