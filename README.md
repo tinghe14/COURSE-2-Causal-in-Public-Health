@@ -11,3 +11,5 @@ Here is the [study note](https://github.com/tinghe14/COURSE-2-Causal-in-Public-H
 
 ## Proposal
 My final proposal for this course
+
+# Grade: A
